@@ -44,7 +44,7 @@ Inference: Menggunakan model hasil pelatihan untuk memprediksi sentimen pada 400
 📊 Hasil
 
 Model Grafik dibawah berhasil mengklasifikasikan 400 data pengujian ke dalam tiga kategori (Positif, Negatif, Netral) berdasarkan pola makna yang dipelajari dari data pelatihan.
- grafik_sentimen.png
+
   ## 🛠️ Teknologi yang Digunakan
 - Python
 - Google Colab (GPU T4)
