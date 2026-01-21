@@ -14,6 +14,7 @@ Nike Oktaviani NIM_41236767
 
 Putri Regina NIM_41236774
 
+
 📝 Deskripsi Tugas
 
 Tugas ini melibatkan proses fine-tuning model Transformer (IndoBERT) untuk melakukan pelabelan sentimen pada data yang tidak berlabel.
@@ -43,8 +44,30 @@ Inference: Menggunakan model hasil pelatihan untuk memprediksi sentimen pada 400
 📊 Hasil
 
 Model Grafik dibawah berhasil mengklasifikasikan 400 data pengujian ke dalam tiga kategori (Positif, Negatif, Netral) berdasarkan pola makna yang dipelajari dari data pelatihan.
- /tmp/ipython-input-2548792954.py:9: FutureWarning: 
+ import matplotlib.pyplot as plt
+import seaborn as sns
 
-Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+# 1. Hitung jumlah tiap sentimen dari hasil tebakan
+counts = df_test['sentiment_prediction'].value_counts()
 
-  sns.barplot(x=counts.index, y=counts.values, palette='viridis')
+# 2. Buat visualisasi
+plt.figure(figsize=(8, 6))
+sns.barplot(x=counts.index, y=counts.values, palette='viridis')
+
+# 3. Tambah judul dan keterangan
+plt.title('Distribusi Hasil Prediksi Sentimen (400 Data Test)', fontsize=14)
+plt.xlabel('Kategori Sentimen', fontsize=12)
+plt.ylabel('Jumlah Kalimat', fontsize=12)
+
+# Tampilkan angka di atas batang
+for i, v in enumerate(counts.values):
+    plt.text(i, v + 5, str(v), ha='center', fontweight='bold')
+
+plt.show()
+
+  ## 🛠️ Teknologi yang Digunakan
+- Python
+- Google Colab (GPU T4)
+- Hugging Face Transformers Library
+- PyTorch
+- Pandas & Matplotlib
