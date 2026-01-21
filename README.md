@@ -44,26 +44,7 @@ Inference: Menggunakan model hasil pelatihan untuk memprediksi sentimen pada 400
 📊 Hasil
 
 Model Grafik dibawah berhasil mengklasifikasikan 400 data pengujian ke dalam tiga kategori (Positif, Negatif, Netral) berdasarkan pola makna yang dipelajari dari data pelatihan.
- import matplotlib.pyplot as plt
-import seaborn as sns
-
-# 1. Hitung jumlah tiap sentimen dari hasil tebakan
-counts = df_test['sentiment_prediction'].value_counts()
-
-# 2. Buat visualisasi
-plt.figure(figsize=(8, 6))
-sns.barplot(x=counts.index, y=counts.values, palette='viridis')
-
-# 3. Tambah judul dan keterangan
-plt.title('Distribusi Hasil Prediksi Sentimen (400 Data Test)', fontsize=14)
-plt.xlabel('Kategori Sentimen', fontsize=12)
-plt.ylabel('Jumlah Kalimat', fontsize=12)
-
-# Tampilkan angka di atas batang
-for i, v in enumerate(counts.values):
-    plt.text(i, v + 5, str(v), ha='center', fontweight='bold')
-
-plt.show()
+ https://drive.google.com/drive/folders/1su9C_eOvTHmuEdhRiN23faOKw1IOsbDG?usp=drive_link
 
   ## 🛠️ Teknologi yang Digunakan
 - Python
